@@ -52,7 +52,7 @@ app.post("/login", function(req, res) {
   var userRecord;
 
   userDirectory.forEach(function(item) {
-    console.log(item);
+    console.log(user);
     if (item.username === user.name) {
       userRecord = item;
     }
@@ -80,7 +80,7 @@ app.get("/login", function(req, res) {
 });
 
 app.get("/profile", function(req, res) {
-  res.render("profile");
+  res.render("profile", {user: req.session.user});
 });
 
 app.listen(port, function() {
