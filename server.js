@@ -31,7 +31,6 @@ app.get("/", function(req, res) {
 });
 
 app.post("/users", function(req, res) {
-  let userData = req.body;
   if (!req.body || !req.body.name || !req.body.password) {
     return res.redirect("/");
   }
@@ -54,12 +53,13 @@ app.post("/login", function(req, res) {
 
   userDirectory.forEach(function(item) {
     console.log(item);
-    if (item.name === user.name) {
+    if (item.username === user.name) {
       userRecord = item;
     }
   });
 
   if (!userRecord) {
+      console.log("user Redord", userRecord);
     return res.redirect("/"); //user not found
   }
 
