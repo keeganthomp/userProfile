@@ -21,6 +21,7 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-mustache": "^1.0.3",
+    "express-session": "^1.15.3",
     "mustache-express": "^1.2.4"
   }
 }
