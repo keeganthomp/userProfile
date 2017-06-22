@@ -30,6 +30,10 @@ app.get("/", function(req, res) {
   res.render("index");
 });
 
+app.get("/logout", function(req, res) {
+  req.session.destroy();
+});
+
 app.post("/users", function(req, res) {
   if (!req.body || !req.body.name || !req.body.password) {
     return res.redirect("/");
